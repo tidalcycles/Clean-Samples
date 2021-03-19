@@ -6,6 +6,8 @@ import os,sys
 import json
 import itertools
 
+version = "clean-0.1"
+
 def merge(a, b):
     if isinstance(a, dict) and isinstance(b, dict):
         d = dict(a)
@@ -30,6 +32,7 @@ def readMeta(pack_folder, subpath, write):
     sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
     s = list(map(lambda x: {'filename': x, 'type': 'sample'}, sounds))
     defaultMeta = {
+        'metadata-format': version,
         'name': os.path.basename(os.path.normpath(pack_folder)),
         'license': "unknown",
         'sounds': s
