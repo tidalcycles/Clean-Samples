@@ -31,6 +31,7 @@ def readMeta(pack_folder, subpath, write):
     s = list(map(lambda x: {'filename': x, 'type': 'sample'}, sounds))
     defaultMeta = {
         'name': os.path.basename(os.path.normpath(pack_folder)),
+        'license': "unknown",
         'sounds': s
     }
      

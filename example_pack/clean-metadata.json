@@ -1,5 +1,6 @@
 {
-  "name": "example_pack",
+  "license": "CC0",
+  "name": "Algorave generation",
   "sounds": [
     {
       "filename": "d.wav",
