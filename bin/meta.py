@@ -4,6 +4,7 @@ import argparse
 import pathlib
 import os,sys
 import json
+import itertools
 
 def merge(a, b):
     if isinstance(a, dict) and isinstance(b, dict):
@@ -12,27 +13,37 @@ def merge(a, b):
         return d
 
     if isinstance(a, list) and isinstance(b, list):
-        return [merge(x, y) for x, y in itertools.izip_longest(a, b)]
+        return [merge(x, y) for x, y in itertools.zip_longest(a, b)]
 
     return a if b is None else b
 
 
+def isSound(path):
+    if os.path.isfile(path):
+        extension = os.path.splitext(path)[1]
+        if extension in ['.wav','.mp3']:
+            return True
+    return False
+
 def readMeta(pack_folder, subpath, write):
+    metafile = os.path.join(pack_folder, "clean-metadata.json")
+    sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
+    s = list(map(lambda x: {'filename': x, 'type': 'sample'}, sounds))
     defaultMeta = {
         'name': os.path.basename(os.path.normpath(pack_folder)),
+        'sounds': s
     }
-    metafile = os.path.join(pack_folder, "clean-metadata.json")
-    
+     
     if (os.path.exists(metafile)):
         with open(metafile) as json_file:
             meta = json.load(json_file)
             meta = merge(defaultMeta,meta)
     else:
         meta = defaultMeta
-
+        
     if write:
         with open(metafile, 'w') as json_file:
-            json.dump(meta, json_file)
+            json.dump(meta, json_file, sort_keys=True, indent=2)
 
     return(meta)
 

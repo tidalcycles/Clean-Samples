@@ -1,1 +1,33 @@
-{"name": "Algorave generation"}
+{
+  "name": "example_pack",
+  "sounds": [
+    {
+      "filename": "d.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "g.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "c.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "b.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "f.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "a.wav",
+      "type": "sample"
+    },
+    {
+      "filename": "e.wav",
+      "type": "sample"
+    }
+  ]
+}
