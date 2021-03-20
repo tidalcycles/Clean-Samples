@@ -1,3 +1,3 @@
-[submodule "samples-flbass"]
-	path = samples-flbass
+[submodule "flbass"]
+	path = flbass
 	url = https://github.com/cleary/samples-flbass.git
