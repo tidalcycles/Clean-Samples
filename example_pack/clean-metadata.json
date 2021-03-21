@@ -1,34 +1,51 @@
 {
-  "license": "CC0",
+  "copyright": "unknown",
+  "description": "",
+  "license": "unknown",
   "metadata-format": "clean-0.1",
-  "name": "Algorave generation",
+  "name": "example_pack",
+  "provenance": "unknown",
   "sounds": [
     {
-      "filename": "d.wav",
+      "description": "",
+      "filename": "sounds/b.wav",
+      "shortname": "b",
       "type": "sample"
     },
     {
-      "filename": "g.wav",
+      "description": "",
+      "filename": "sounds/f.wav",
+      "shortname": "f",
       "type": "sample"
     },
     {
-      "filename": "c.wav",
+      "description": "",
+      "filename": "sounds/c.wav",
+      "shortname": "c",
       "type": "sample"
     },
     {
-      "filename": "b.wav",
+      "description": "",
+      "filename": "sounds/g.wav",
+      "shortname": "g",
       "type": "sample"
     },
     {
-      "filename": "f.wav",
+      "description": "",
+      "filename": "sounds/e.wav",
+      "shortname": "e",
       "type": "sample"
     },
     {
-      "filename": "a.wav",
+      "description": "",
+      "filename": "sounds/d.wav",
+      "shortname": "d",
       "type": "sample"
     },
     {
-      "filename": "e.wav",
+      "description": "",
+      "filename": "sounds/a.wav",
+      "shortname": "a",
       "type": "sample"
     }
   ]

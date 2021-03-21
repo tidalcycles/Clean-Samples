@@ -27,14 +27,18 @@ def isSound(path):
             return True
     return False
 
-def readMeta(pack_folder, subpath, write):
+def readMeta(pack_folder, subfolder, write):
+    subpath = os.path.join(pack_folder, subfolder)
     metafile = os.path.join(pack_folder, "clean-metadata.json")
     sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
-    s = list(map(lambda x: {'filename': x, 'type': 'sample'}, sounds))
+    s = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': '', 'type': 'sample'}, sounds))
     defaultMeta = {
         'metadata-format': version,
         'name': os.path.basename(os.path.normpath(pack_folder)),
         'license': "unknown",
+        'copyright': "unknown",
+        'provenance': "unknown",
+        'description': "",
         'sounds': s
     }
      
@@ -72,7 +76,6 @@ def getArgs():
 args = getArgs()
 
 for pack_folder in args.pack_folder:
-    subpath = os.path.join(pack_folder, args.subfolder)
-    meta = readMeta(pack_folder, subpath, args.write)
+    meta = readMeta(pack_folder, args.subfolder, args.write)
 
 exit(0)
