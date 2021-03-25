@@ -1,39 +1,16 @@
 {
-  "copyright": "unknown",
+  "copyright": "(c) 2021 Alex McLean",
   "description": "",
-  "license": "unknown",
+  "email": "alex@slab.org",
+  "license": "cc0",
+  "maintainer": "alex",
   "metadata-format": "clean-0.1",
-  "provenance": "unknown",
-  "shortname": "example_pack",
+  "provenance": "",
   "sounds": [
-    {
-      "description": "",
-      "filename": "sounds/a.wav",
-      "shortname": "a",
-      "type": "sample"
-    },
     {
       "description": "",
       "filename": "sounds/b.wav",
       "shortname": "b",
-      "type": "sample"
-    },
-    {
-      "description": "",
-      "filename": "sounds/c.wav",
-      "shortname": "c",
-      "type": "sample"
-    },
-    {
-      "description": "",
-      "filename": "sounds/d.wav",
-      "shortname": "d",
-      "type": "sample"
-    },
-    {
-      "description": "",
-      "filename": "sounds/e.wav",
-      "shortname": "e",
       "type": "sample"
     },
     {
@@ -44,8 +21,32 @@
     },
     {
       "description": "",
+      "filename": "sounds/c.wav",
+      "shortname": "c",
+      "type": "sample"
+    },
+    {
+      "description": "",
       "filename": "sounds/g.wav",
       "shortname": "g",
+      "type": "sample"
+    },
+    {
+      "description": "",
+      "filename": "sounds/e.wav",
+      "shortname": "e",
+      "type": "sample"
+    },
+    {
+      "description": "",
+      "filename": "sounds/d.wav",
+      "shortname": "d",
+      "type": "sample"
+    },
+    {
+      "description": "",
+      "filename": "sounds/a.wav",
+      "shortname": "a",
       "type": "sample"
     }
   ]
