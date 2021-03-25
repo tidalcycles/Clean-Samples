@@ -5,6 +5,7 @@ import pathlib
 import os,sys
 import json
 import itertools
+import getpass
 
 version = "clean-0.1"
 
@@ -27,21 +28,12 @@ def isSound(path):
             return True
     return False
 
-def readMeta(pack_folder, subfolder, write):
+def readMeta(shortname, defaultMeta, pack_folder, subfolder, write):
     subpath = os.path.join(pack_folder, subfolder)
-    metafile = os.path.join(pack_folder, "clean-metadata.json")
+    metafile = os.path.join(pack_folder, shortname + ".cleanmeta")
     sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
-    s = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': '', 'type': 'sample'}, sounds))
-    defaultMeta = {
-        'metadata-format': version,
-        'name': os.path.basename(os.path.normpath(pack_folder)),
-        'license': "unknown",
-        'copyright': "unknown",
-        'provenance': "unknown",
-        'description': "",
-        'sounds': s
-    }
-     
+    defaultMeta['sounds'] = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': '', 'type': 'sample'}, sounds))
+    
     if (os.path.exists(metafile)):
         with open(metafile) as json_file:
             meta = json.load(json_file)
@@ -58,24 +50,63 @@ def readMeta(pack_folder, subfolder, write):
     
 def getArgs():
     parser = argparse.ArgumentParser(description='Create metadata for a sample folder.')
-    parser.add_argument('pack_folder', nargs='+', type=str)
-    parser.add_argument('--sample-subfolder', dest="subfolder", default="sounds", type=str)
+    parser.add_argument('pack_folder', type=str)
+    parser.add_argument('--quiet', default=False, action="store_true")
+    parser.add_argument('--sample-subfolder', dest="subfolder", default="", type=str)
+    parser.add_argument('--shortname', type=str,
+                        help='Identifier for the sampleset. Used to name the metadata file and to reference the sampleset elsewhere. Defaults to the name of the containing pack_folder.'
+    )
+    parser.add_argument('--maintainer', type=str,
+                        help='Name of maintainer'
+    )
+    parser.add_argument('--email', type=str,
+                        help='Email of maintainer'
+    )
+    parser.add_argument('--copyright', type=str,
+                        help='Copyright statement, e.g. (c) Gregory Coleman, 1969'
+    )
+    parser.add_argument('--license', type=str,
+                        help='e.g. CC0 for creative commons zero (public domain)'
+    )
+    parser.add_argument('--provenance', type=str,
+                        help='Where the samples came from, e.g. a freesound.org URL'
+    )
+    parser.add_argument('--description', type=str,
+                        help='Description of a sample pack'
+    )
     parser.add_argument('--write', default=False,
                         help='write/re-write the metadata with default values', action="store_true"
     )
 
     args = parser.parse_args()
-    for pack_folder in args.pack_folder:
-        if (not os.path.exists(pack_folder)):
-            sys.exit("Couldn't open '" + pack_folder + "'")
-            subpath = os.path.join(pack_folder, args.subfolder)
-            if (not os.path.exists(subpath)):
-                sys.exit("Couldn't open '" + subpath + "'")
+    if (not os.path.exists(args.pack_folder)):
+        sys.exit("Couldn't open '" + args.pack_folder + "'")
+        subpath = os.path.join(args.pack_folder, args.subfolder)
+        if (not os.path.exists(subpath)):
+            sys.exit("Couldn't open '" + subpath + "'")
     return args
 
 args = getArgs()
 
-for pack_folder in args.pack_folder:
-    meta = readMeta(pack_folder, args.subfolder, args.write)
+defaultMeta = {
+    'metadata-format': version,
+    'license': args.license if args.license else "unknown",
+    'copyright': args.copyright if args.copyright else "unknown",
+    'provenance': args.provenance if args.provenance else "",
+    'maintainer': args.maintainer if args.maintainer else getpass.getuser(),
+    'email': args.email if args.email else "",
+    'description': args.description if args.description else "",
+}
+
+pack_folder = args.pack_folder
+if args.shortname:
+    shortname = args.shortname
+else:
+    shortname = os.path.basename(os.path.normpath(pack_folder))
+
+meta = readMeta(shortname, defaultMeta, pack_folder, args.subfolder, args.write)
+
+if not args.quiet:
+    print(json.dumps(meta, sort_keys=True, indent=2))
 
 exit(0)
