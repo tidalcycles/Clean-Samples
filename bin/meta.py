@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Script for generating clean metadata files for superdirt and friends.
+# (c) 2021 Alex McLean and contributors. Distributed under the terms of 
+# GPLv3, see LICENSE for details.
+
 import argparse
 import pathlib
 import os,sys
