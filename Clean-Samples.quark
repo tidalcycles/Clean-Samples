@@ -1,0 +1,7 @@
+(
+	\name: 			"Clean-Samples",
+	\summary:		"A meta-quark for a clean set of 'default' sound samples for use with SuperDirt and friends, intended to replace Dirt-Samples.",
+	\author: 		"Julian Rohrhuber, Alex McLean et al",
+	\since: 		"2021",
+	\dependencies:  []
+)
