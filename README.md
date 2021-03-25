@@ -54,4 +54,4 @@ anything is unclear please create an issue, thanks!
    ../Clean-Samples/bin/meta.py --sample-subfolder repetition/ --maintainer alex --email alex@slab.org --copyright "(c) 2021 Alex McLean" --license CC0 --provenance "Various dodgy speech synths" --shortname repetition --sample-subfolder repetition --write .
    ```
    After generating the file, edit it with a text editor to fill in any missing info.
-5. When ready, add the URL to your repository to the [https://github.com/tidalcycles/Clean-Samples/blob/main/Clean-Samples.quark](dependencies for the Clean-Samples quark) in a pull request.
+5. When ready, add the URL to your repository to the [dependencies for the Clean-Samples quark](https://github.com/tidalcycles/Clean-Samples/blob/main/Clean-Samples.quark) in a pull request.
