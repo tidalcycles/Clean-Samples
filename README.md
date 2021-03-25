@@ -16,5 +16,5 @@ are very welcome. You're encouraged to discuss this in the github
 issue tracker so that we can develop a standard way to share and
 index/signpost these packs.
 
-See [/tidalcycles/Clean-reptition](https://github.com/tidalcycles/Clean-repetition) for an example sample pack.
+See [/tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition) for an example sample pack.
 
