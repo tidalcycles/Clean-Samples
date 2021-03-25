@@ -14,7 +14,7 @@ issue tracker so that we can develop a standard way to share and
 index/signpost these packs.
 
 See
-[/tidalcycles/Clean-reptition](https://github.com/tidalcycles/Clean-repetition)
+[/tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition)
 for an example sample pack which has two sample sets in it.
 
 ## How to contribute a sample pack
