@@ -32,6 +32,7 @@ def readMeta(shortname, defaultMeta, pack_folder, subfolder, write):
     subpath = os.path.join(pack_folder, subfolder)
     metafile = os.path.join(pack_folder, shortname + ".cleanmeta")
     sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
+    sounds.sort()
     defaultMeta['sounds'] = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': '', 'type': 'sample'}, sounds))
     
     if (os.path.exists(metafile)):
