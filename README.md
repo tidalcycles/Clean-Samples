@@ -21,7 +21,8 @@ for an example sample pack which has two sample sets in it.
 
 Please only contribute samples if you are happy to share them under a
 permissive license such as
-[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/).
+[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) or 
+a similar [creative commons license](https://creativecommons.org/choose/).
 
 If you are unfamiliar with the 'git' software, please [create an issue
 here](https://github.com/tidalcycles/Clean-Samples/issues), with a
