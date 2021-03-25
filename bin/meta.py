@@ -59,7 +59,7 @@ def getArgs():
     parser.add_argument('--quiet', default=False, action="store_true")
     parser.add_argument('--sample-subfolder', dest="subfolder", default="", type=str)
     parser.add_argument('--shortname', type=str,
-                        help='Identifier for the sampleset. Used to name the metadata file and to reference the sampleset elsewhere. Defaults to the name of the containing pack_folder.'
+                        help='Identifier for the sampleset. Used to name the metadata file and to reference the sampleset elsewhere. Defaults to the name of the containing folder.'
     )
     parser.add_argument('--maintainer', type=str,
                         help='Name of maintainer'
@@ -107,7 +107,7 @@ pack_folder = args.pack_folder
 if args.shortname:
     shortname = args.shortname
 else:
-    shortname = os.path.basename(os.path.normpath(pack_folder))
+    shortname = os.path.basename(os.path.normpath(os.path.join(args.pack_folder, args.subfolder)))
 
 meta = readMeta(shortname, defaultMeta, pack_folder, args.subfolder, args.write)
 
