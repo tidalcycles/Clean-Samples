@@ -15,7 +15,7 @@ in the github issue tracker so that we can develop a standard way to
 share and index/signpost these packs.
 
 See
-[/tidalcycles/samples-repetition](https://github.com/tidalcycles/Clean-repetition)
+[/tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounds-repetition)
 for an example sample pack which has two sets of samples in it.
 
 ## How to contribute a sample pack
@@ -36,17 +36,17 @@ anything is unclear please create an issue, thanks!
 
 1. Get your samples together in .wav format, editing them if necessary (see below for advice).
 2. [Create a new repository](https://github.com/new). This isn't
-   essential, but consider putting 'samples-' in front of its name,
-   e.g. 'samples-303bass' for your 303 bass samples.
+   essential, but consider putting 'sounds-' in front of its name,
+   e.g. 'sounds-303bass' for your 303 bass samples.
 3. Add your samples to the repository. For an example of how to
    organise them, see this sample pack:
-   [tidalcycles/samples-repetition](https://github.com/tidalcycles/samples-repetition),
+   [tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounsd-repetition),
    which has two sets of samples, with a subfolder for each.
 4. Create a '.cleanmeta' metadata file for each subfolder. Again, see
-   [tidalcycles/samples-repetition](https://github.com/tidalcycles/samples-repetition)
+   [tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounds-repetition)
    for examples. There is a python script [bin/meta.py](bin/meta.py)
    which can generate the metadata file for you, run it without
-   parameters for help. Here is an example commandline, that was used to generate [repetition.cleanmeta](https://github.com/tidalcycles/Clean-repetition/blob/main/repetition.cleanmeta):
+   parameters for help. Here is an example commandline, that was used to generate [repetition.cleanmeta](https://github.com/tidalcycles/sounds-repetition/blob/main/repetition.cleanmeta):
 
    ```
    ../Clean-Samples/bin/meta.py --sample-subfolder repetition/ --maintainer alex --email alex@slab.org --copyright "(c) 2021 Alex McLean" --license CC0 --provenance "Various dodgy speech synths" --shortname repetition --sample-subfolder repetition --write .
