@@ -4,6 +4,7 @@
 	\author: 		"Julian Rohrhuber, Alex McLean et al",
 	\since: 		"2021",
 	\dependencies:  ["https://github.com/tidalcycles/Clean-repetition.git",
-                         "https://github.com/cleary/Clean-cleary-samples"
+                         "https://github.com/cleary/Clean-cleary-samples",
+			 "https://github.com/yaxu/Clean-Dirty"
                         ]
 )
