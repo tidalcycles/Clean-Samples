@@ -15,7 +15,7 @@ in the github issue tracker so that we can develop a standard way to
 share and index/signpost these packs.
 
 See
-[/tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition)
+[/tidalcycles/samples-repetition](https://github.com/tidalcycles/Clean-repetition)
 for an example sample pack which has two sets of samples in it.
 
 ## How to contribute a sample pack
@@ -40,10 +40,10 @@ anything is unclear please create an issue, thanks!
    e.g. 'samples-303bass' for your 303 bass samples.
 3. Add your samples to the repository. For an example of how to
    organise them, see this sample pack:
-   [tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition),
+   [tidalcycles/samples-repetition](https://github.com/tidalcycles/samples-repetition),
    which has two sets of samples, with a subfolder for each.
 4. Create a '.cleanmeta' metadata file for each subfolder. Again, see
-   [tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition)
+   [tidalcycles/samples-repetition](https://github.com/tidalcycles/samples-repetition)
    for examples. There is a python script [bin/meta.py](bin/meta.py)
    which can generate the metadata file for you, run it without
    parameters for help. Here is an example commandline, that was used to generate [repetition.cleanmeta](https://github.com/tidalcycles/Clean-repetition/blob/main/repetition.cleanmeta):
