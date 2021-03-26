@@ -40,7 +40,7 @@ anything is unclear please create an issue, thanks!
    e.g. 'sounds-303bass' for your 303 bass samples.
 3. Add your samples to the repository. For an example of how to
    organise them, see this sample pack:
-   [tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounsd-repetition),
+   [tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounds-repetition),
    which has two sets of samples, with a subfolder for each.
 4. Create a '.cleanmeta' metadata file for each subfolder. Again, see
    [tidalcycles/sounds-repetition](https://github.com/tidalcycles/sounds-repetition)
