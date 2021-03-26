@@ -3,8 +3,8 @@
 	\summary:		"A meta-quark for a clean set of 'default' sound samples for use with SuperDirt and friends, intended to replace Dirt-Samples.",
 	\author: 		"Julian Rohrhuber, Alex McLean et al",
 	\since: 		"2021",
-	\dependencies:  ["https://github.com/tidalcycles/Clean-repetition",
+	\dependencies:  ["https://github.com/tidalcycles/sounds-repetition",
                          "https://github.com/cleary/samples-flbass",
-			 "https://github.com/yaxu/Clean-Dirty"
+			 "https://github.com/yaxu/sounds-Dirty"
                         ]
 )
