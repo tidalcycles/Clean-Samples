@@ -36,8 +36,8 @@ anything is unclear please create an issue, thanks!
 
 1. Get your samples together in .wav format, editing them if necessary (see below for advice).
 2. [Create a new repository](https://github.com/new). This isn't
-   essential, but consider putting 'Clean-' in front of its name,
-   e.g. 'Clean-303bass' for your 303 bass samples.
+   essential, but consider putting 'samples-' in front of its name,
+   e.g. 'samples-303bass' for your 303 bass samples.
 3. Add your samples to the repository. For an example of how to
    organise them, see this sample pack:
    [tidalcycles/Clean-repetition](https://github.com/tidalcycles/Clean-repetition),
