@@ -57,7 +57,7 @@ anything is unclear please create an issue, thanks!
 ## Advice for preparing samples
 
 You can use free/open source software like
-[ardour](https://www.audacityteam.org/download/) for editing samples.
+[audacity](https://www.audacityteam.org/download/) for editing samples.
 
 As a minimum, be sure to trim any silence from beginning/end of the
 samples, and that the start and end of the sample is at zero to avoid
