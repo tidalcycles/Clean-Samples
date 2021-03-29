@@ -49,7 +49,7 @@ anything is unclear please create an issue, thanks!
    parameters for help. Here is an example commandline, that was used to generate [repetition.cleanmeta](https://github.com/tidalcycles/sounds-repetition/blob/main/repetition.cleanmeta):
 
    ```
-   ../Clean-Samples/bin/meta.py --sample-subfolder repetition/ --maintainer alex --email alex@slab.org --copyright "(c) 2021 Alex McLean" --license CC0 --provenance "Various dodgy speech synths" --shortname repetition --sample-subfolder repetition --write .
+   ../Clean-Samples/bin/meta.py --maintainer alex --email alex@slab.org --copyright "(c) 2021 Alex McLean" --license CC0 --provenance "Various dodgy speech synths" --shortname repetition --sample-subfolder repetition/ --write .
    ```
    After generating the file, edit it with a text editor to fill in any missing info.
 5. When ready, add te URL of your repository to the [https://github.com/tidalcycles/Clean-Samples/blob/main/Clean-Samples.quark](dependencies) for the Clean-Samples quark) in a pull request. You could also add it to the [SuperCollider quarks database](https://github.com/supercollider-quarks/quarks/blob/master/directory.txt), or we can do that for you if you prefer, so that we can accept the PR to Clean-Samples once it's accepted as a quark.
