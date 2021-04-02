@@ -22,7 +22,7 @@ for an example sample pack which has two sets of samples in it.
 
 Please only contribute samples if you are happy to share them under a
 permissive license such as
-[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) or 
+[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) or
 a similar [creative commons license](https://creativecommons.org/choose/).
 
 If you are unfamiliar with the 'git' software, please [create an issue
@@ -52,7 +52,7 @@ anything is unclear please create an issue, thanks!
    ../Clean-Samples/bin/meta.py --maintainer alex --email alex@slab.org --copyright "(c) 2021 Alex McLean" --license CC0 --provenance "Various dodgy speech synths" --shortname repetition --sample-subfolder repetition/ --write .
    ```
    After generating the file, edit it with a text editor to fill in any missing info.
-5. When ready, add te URL of your repository to the [https://github.com/tidalcycles/Clean-Samples/blob/main/Clean-Samples.quark](dependencies) for the Clean-Samples quark) in a pull request. You could also add it to the [SuperCollider quarks database](https://github.com/supercollider-quarks/quarks/blob/master/directory.txt), or we can do that for you if you prefer, so that we can accept the PR to Clean-Samples once it's accepted as a quark.
+5. When ready, add the URL of your repository to the [https://github.com/tidalcycles/Clean-Samples/blob/main/Clean-Samples.quark](dependencies) for the Clean-Samples quark) in a pull request. You could also add it to the [SuperCollider quarks database](https://github.com/supercollider-quarks/quarks/blob/master/directory.txt), or we can do that for you if you prefer, so that we can accept the PR to Clean-Samples once it's accepted as a quark.
 
 ## Advice for preparing samples
 
