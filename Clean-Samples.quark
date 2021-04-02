@@ -4,6 +4,7 @@
 	\author: 		"Julian Rohrhuber, Alex McLean et al",
 	\since: 		"2021",
 	\dependencies:  ["https://github.com/cleary/samples-cello-bowed",
+			 "https://github.com/cleary/samples-cello-plucked",
 			 "https://github.com/cleary/samples-flbass",
 			 "https://github.com/tidalcycles/sounds-Dirty",
 			 "https://github.com/tidalcycles/sounds-repetition",
