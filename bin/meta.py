@@ -13,6 +13,13 @@ import getpass
 
 version = "clean-0.1"
 
+meta_subpath = "_soundmeta"
+
+exts = {'.mp3': 'sample',
+        '.wav': 'sample',
+        '.scd': 'supercollider'
+}
+
 def merge(a, b):
     if isinstance(a, dict) and isinstance(b, dict):
         d = dict(a)
@@ -27,17 +34,30 @@ def merge(a, b):
 
 def isSound(path):
     if os.path.isfile(path):
-        extension = os.path.splitext(path)[1]
-        if extension in ['.wav','.mp3']:
+        extension = os.path.splitext(path)[1].lower()
+        if extension in exts.keys():
             return True
     return False
 
-def readMeta(shortname, defaultMeta, pack_folder, subfolder, write):
+def makeMeta(shortname, defaultMeta, pack_folder, subfolder, write):
     subpath = os.path.join(pack_folder, subfolder)
-    metafile = os.path.join(pack_folder, shortname + ".cleanmeta")
+
+    metapath = os.path.join(pack_folder, meta_subpath)
+    if not os.path.exists(metapath):
+        os.makedirs(metapath)
+
+    metafile = os.path.join(metapath, shortname + ".json")
+    
     sounds = [fn for fn in os.listdir(subpath) if isSound(os.path.join(subpath, fn))]
     sounds.sort()
-    defaultMeta['sounds'] = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': '', 'type': 'sample'}, sounds))
+
+    sound_types = set(map(lambda x: exts[os.path.splitext(x)[1].lower()], sounds))
+    if len(sound_types) > 1:
+        defaultMeta['sound_type'] = "mixed"
+    else:
+        defaultMeta['sound_type'] = sound_types.pop()
+    
+    defaultMeta['sounds'] = list(map(lambda x: {'filename': os.path.join(subfolder,x), 'shortname': os.path.splitext(x)[0], 'description': ''}, sounds))
     
     if (os.path.exists(metafile)):
         with open(metafile) as json_file:
@@ -93,8 +113,15 @@ def getArgs():
 
 args = getArgs()
 
+pack_folder = args.pack_folder
+if args.shortname:
+    shortname = args.shortname
+else:
+    shortname = os.path.basename(os.path.normpath(os.path.join(args.pack_folder, args.subfolder)))
+
 defaultMeta = {
     'metadata-format': version,
+    'shortname': shortname,
     'license': args.license if args.license else "unknown",
     'copyright': args.copyright if args.copyright else "unknown",
     'provenance': args.provenance if args.provenance else "",
@@ -103,13 +130,8 @@ defaultMeta = {
     'description': args.description if args.description else "",
 }
 
-pack_folder = args.pack_folder
-if args.shortname:
-    shortname = args.shortname
-else:
-    shortname = os.path.basename(os.path.normpath(os.path.join(args.pack_folder, args.subfolder)))
 
-meta = readMeta(shortname, defaultMeta, pack_folder, args.subfolder, args.write)
+meta = makeMeta(shortname, defaultMeta, pack_folder, args.subfolder, args.write)
 
 if not args.quiet:
     print(json.dumps(meta, sort_keys=True, indent=2))
