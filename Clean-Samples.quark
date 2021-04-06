@@ -6,7 +6,8 @@
 	\dependencies:  ["https://github.com/cleary/samples-cello-bowed",
 			 "https://github.com/cleary/samples-cello-plucked",
 			 "https://github.com/cleary/samples-flbass",
-			 "https://github.com/lannzach/sounds-wavestab",			 
+			 "https://github.com/lannzach/sounds-wavestab",	
+                         "https://github.com/thgrund/samples-ukulele",		 
 			 "https://github.com/tidalcycles/sounds-Dirty",
 			 "https://github.com/tidalcycles/sounds-repetition",
 			 "https://github.com/tidalcycles/sounds-tr808-fischer"
